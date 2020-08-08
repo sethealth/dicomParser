@@ -1,4 +1,3 @@
-declare module 'dicom-parser' {
  
   export type ByteArray = Uint8Array | Buffer;
 
@@ -173,4 +172,3 @@ declare module 'dicom-parser' {
   export function readSequenceItem(byteStream: ByteStream): Pick<Element, 'tag' | 'length' | 'dataOffset'>
   export function readTag(byteStream: ByteStream): string
  
-}

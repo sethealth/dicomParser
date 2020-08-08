@@ -1,14 +1,19 @@
 {
-  "name": "dicom-parser",
+  "name": "@sethealth/dicom-parser",
   "version": "1.8.5",
   "description": "Javascript parser for DICOM Part 10 data",
-  "main": "dist/dicomParser.min.js",
-  "module": "dist/dicomParser.min.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "keywords": [
     "DICOM",
     "medical",
     "imaging"
   ],
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "types": "index.d.ts",
   "author": "Chris Hafey",
   "homepage": "https://github.com/cornerstonejs/dicomParser",
   "license": "MIT",
@@ -20,7 +25,7 @@
     "url": "https://github.com/cornerstonejs/dicomParser.git"
   },
   "scripts": {
-    "build": "npm run test && npm run version && npm run webpack && npm run copy:meteor && npm run doc:generate",
+    "build": "npm run test && npm run version && npm run rollup && npm run copy:meteor && npm run doc:generate",
     "clean": "npm run clean:dist && npm run clean:coverage",
     "clean:coverage": "shx rm -rf coverage",
     "clean:dist": "shx rm -rf dist",
@@ -38,14 +43,14 @@
     "test:chrome": "karma start config/karma/karma-chrome.js",
     "test:firefox": "karma start config/karma/karma-firefox.js",
     "test:watch": "karma start config/karma/karma-watch.js",
-    "version": "node -p -e \"'export default \\'' + require('./package.json').version + '\\';'\" > src/version.js",
     "watch": "npm run webpack:watch",
-    "webpack": "npm run clean:dist && npm run webpack:prod && npm run webpack:dev",
+    "rollup": "npm run clean:dist && rollup -c rollup.config.js",
     "webpack:dev": "webpack --progress --config ./config/webpack/webpack-dev",
     "webpack:prod": "webpack --progress --config ./config/webpack/webpack-prod",
     "webpack:watch": "webpack --progress --debug --watch  --config ./config/webpack"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
@@ -68,8 +73,9 @@
     "karma-webpack": "^3.0.0",
     "lodash": "4.17.13",
     "mocha": "^4.0.1",
-    "puppeteer": "^1.2.0",
     "opn-cli": "^3.1.0",
+    "puppeteer": "^1.2.0",
+    "rollup": "^2.23.1",
     "rusha": "^0.8.6",
     "shx": "^0.2.2",
     "uglifyjs-webpack-plugin": "^1.2.4",

@@ -34,41 +34,6 @@ import readSequenceItemsImplicit from './readSequenceElementImplicit.js';
 import readSequenceItem from './readSequenceItem.js';
 import readTag from './readTag.js';
 
-const dicomParser = {
-  isStringVr,
-  isPrivateTag,
-  parsePN,
-  parseTM,
-  parseDA,
-  explicitElementToString,
-  explicitDataSetToJS,
-  createJPEGBasicOffsetTable,
-  parseDicomDataSetExplicit,
-  parseDicomDataSetImplicit,
-  readFixedString,
-  alloc,
-  version,
-  bigEndianByteArrayParser,
-  ByteStream,
-  sharedCopy,
-  DataSet,
-  findAndSetUNElementLength,
-  findEndOfEncapsulatedElement,
-  findItemDelimitationItemAndSetElementLength,
-  littleEndianByteArrayParser,
-  parseDicom,
-  readDicomElementExplicit,
-  readDicomElementImplicit,
-  readEncapsulatedImageFrame,
-  readEncapsulatedPixelData,
-  readEncapsulatedPixelDataFromFragments,
-  readPart10Header,
-  readSequenceItemsExplicit,
-  readSequenceItemsImplicit,
-  readSequenceItem,
-  readTag
-};
-
 export {
   isStringVr,
   isPrivateTag,
@@ -104,4 +69,3 @@ export {
   readTag
 };
 
-export default dicomParser;
