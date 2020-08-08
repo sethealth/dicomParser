@@ -1,6 +1,6 @@
 {
   "name": "@sethealth/dicom-parser",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "description": "Javascript parser for DICOM Part 10 data",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
