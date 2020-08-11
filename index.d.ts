@@ -11,6 +11,7 @@
     tag: string;
     vr?: string;
     length: number;
+    offset: number;
     dataOffset: number;
     items?: Element[];
     dataSet?: DataSet;
@@ -100,7 +101,7 @@
     position: number;
     warnings: string[];
  
-    new (byteArrayParser: ByteArrayParser, byteArray: ByteArray, position: number);
+    new (byteArrayParser: ByteArrayParser, byteArray: ByteArray, position: number): ByteStream;
     seek: (offset: number) => void;
     readByteStream: (numBytes: number) => ByteStream;
     readUint16: () => number;

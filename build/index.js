@@ -279,6 +279,7 @@ function explicitDataSetToJS (dataSet, options) {
         result[tag] = asString;
       } else {
         result[tag] = {
+          offset: element.offset,
           dataOffset: element.dataOffset,
           length: element.length
         };
@@ -930,6 +931,7 @@ function readDicomElementImplicit (byteStream, untilTag, vrCallback) {
   }
 
   const element = {
+    offset: byteStream.position,
     tag: readTag(byteStream),
     length: byteStream.readUint32(),
     dataOffset: byteStream.position
@@ -982,6 +984,7 @@ function readSequenceItem (byteStream) {
   }
 
   const element = {
+    offset: byteStream.position,
     tag: readTag(byteStream),
     length: byteStream.readUint32(),
     dataOffset: byteStream.position

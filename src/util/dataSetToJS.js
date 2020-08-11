@@ -48,6 +48,7 @@ export default function explicitDataSetToJS (dataSet, options) {
         result[tag] = asString;
       } else {
         result[tag] = {
+          offset: element.offset,
           dataOffset: element.dataOffset,
           length: element.length
         };

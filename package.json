@@ -1,6 +1,6 @@
 {
   "name": "@sethealth/dicom-parser",
-  "version": "1.8.6",
+  "version": "1.8.10",
   "description": "Javascript parser for DICOM Part 10 data",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -44,10 +44,7 @@
     "test:firefox": "karma start config/karma/karma-firefox.js",
     "test:watch": "karma start config/karma/karma-watch.js",
     "watch": "npm run webpack:watch",
-    "rollup": "npm run clean:dist && rollup -c rollup.config.js",
-    "webpack:dev": "webpack --progress --config ./config/webpack/webpack-dev",
-    "webpack:prod": "webpack --progress --config ./config/webpack/webpack-prod",
-    "webpack:watch": "webpack --progress --debug --watch  --config ./config/webpack"
+    "rollup": "npm run clean:dist && rollup -c rollup.config.js"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.4.0",

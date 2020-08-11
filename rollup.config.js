@@ -11,7 +11,7 @@ export default {
             dir: "dist/es"
         },
         {
-            format: 'es',
+            format: 'commonjs',
             dir: "dist/cjs"
         }
     ]
